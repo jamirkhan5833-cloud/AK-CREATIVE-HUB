@@ -18,8 +18,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f9f9f9;color:#1a1a1a}
 .sub-text{font-size:13px;color:#666;text-align:center}
 .sec-title{font-size:12px;font-weight:600;color:#666;margin-bottom:10px;letter-spacing:0.5px;text-transform:uppercase}
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.2rem}
-.cat-btn{padding:12px 6px;border-radius:12px;border:1.5px solid transparent;cursor:pointer;text-align:center;font-size:11px;font-weight:600;background:#f0f0f0;color:#666;font-family:inherit}
-.cat-btn .ico{font-size:22px;display:block;margin-bottom:4px}
+.cat-btn{padding:10px 6px;border-radius:12px;border:1.5px solid transparent;cursor:pointer;text-align:center;font-size:11px;font-weight:600;background:#f0f0f0;color:#666;font-family:inherit}
+.cat-btn .ico{font-size:20px;display:block;margin-bottom:4px}
 .cat-btn.on{background:#EEEDFE;border-color:#7F77DD;color:#3C3489}
 .levels{display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap}
 .lev-btn{padding:5px 14px;border-radius:20px;border:1px solid #e0e0e0;font-size:12px;cursor:pointer;background:transparent;color:#666;font-family:inherit}
@@ -27,30 +27,41 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f9f9f9;color:#1a1a1a}
 .prog-wrap{background:#f0f0f0;border-radius:10px;height:6px;margin-top:8px;overflow:hidden}
 .prog-bar{height:100%;border-radius:10px;background:#7F77DD;transition:width 0.4s}
 .prog-label{font-size:11px;color:#666;margin-top:4px;text-align:right}
-.lessons{display:flex;flex-direction:column;gap:10px;margin-top:1rem}
-.lesson-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:14px;cursor:pointer}
-.lesson-card.on{border-color:#7F77DD;background:#EEEDFE}
+.lessons{display:flex;flex-direction:column;gap:12px;margin-top:1rem}
+.lesson-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden;cursor:pointer}
+.lesson-card.on{border-color:#7F77DD}
 .lesson-card.done .lesson-num{background:#EAF3DE;color:#3B6D11}
 .lesson-card.on .lesson-num{background:#7F77DD;color:#EEEDFE}
-.lesson-head{display:flex;align-items:center;gap:10px}
+.lesson-head{display:flex;align-items:center;gap:10px;padding:14px}
 .lesson-num{width:28px;height:28px;border-radius:50%;background:#EEEDFE;color:#534AB7;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .lesson-title{font-size:14px;font-weight:600;color:#1a1a1a;flex:1}
 .badge{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600}
 .be{background:#EAF3DE;color:#3B6D11}
 .bm{background:#FAEEDA;color:#633806}
 .bh{background:#FAECE7;color:#712B13}
-.lesson-steps{margin-top:12px;padding-top:12px;border-top:1px solid #e0e0e0;display:none}
-.lesson-card.on .lesson-steps{display:block}
-.step{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #e0e0e0}
+.lesson-body{display:none;border-top:1px solid #e0e0e0}
+.lesson-card.on .lesson-body{display:block}
+.video-wrap{position:relative;width:100%;padding-bottom:56.25%;background:#000}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a0a2e,#0a1a2e);cursor:pointer}
+.play-btn{width:60px;height:60px;border-radius:50%;background:#FF0000;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.play-btn::after{content:"";border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:4px}
+.video-title{color:#fff;font-size:13px;font-weight:600;text-align:center;padding:0 20px}
+.lesson-content{padding:14px}
+.steps-title{font-size:12px;font-weight:600;color:#666;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px}
+.step{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #f0f0f0}
 .step:last-child{border-bottom:none}
-.step-num{width:20px;height:20px;border-radius:50%;background:#f0f0f0;color:#666;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.step-text{font-size:13px;color:#666;line-height:1.5}
+.step-num{width:22px;height:22px;border-radius:50%;background:#EEEDFE;color:#534AB7;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-text{font-size:13px;color:#555;line-height:1.5}
 .step-text strong{color:#1a1a1a;font-weight:600}
-.done-btn{width:100%;margin-top:10px;padding:10px;background:#7F77DD;color:#EEEDFE;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.tip-card{background:#E1F5EE;border-radius:8px;border:1px solid #9FE1CB;padding:10px 14px;margin-top:10px;font-size:12px;color:#085041;line-height:1.5}
+.img-row{display:flex;gap:8px;margin:10px 0;overflow-x:auto}
+.img-thumb{flex-shrink:0;width:90px;height:70px;border-radius:8px;background:linear-gradient(135deg,#EEEDFE,#E1F5EE);border:1px solid #e0e0e0;display:flex;align-items:center;justify-content:center;font-size:28px}
+.done-btn{width:100%;margin-top:12px;padding:11px;background:#7F77DD;color:#EEEDFE;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
 .tip-box{background:#E1F5EE;border-radius:8px;border:1px solid #9FE1CB;padding:10px 14px;margin-top:14px;font-size:13px;color:#085041;line-height:1.5}
 .about-section{margin-top:2rem;border-top:1px solid #e0e0e0;padding-top:1.5rem}
 .about-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:1.5rem 1rem;text-align:center}
-.about-photo{width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:3px solid #7F77DD;background:#EEEDFE}
+.about-photo{width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:3px solid #7F77DD}
 .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
 .about-name{font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:4px}
 .about-role{font-size:13px;color:#534AB7;font-weight:600;margin-bottom:1rem}
@@ -70,16 +81,16 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f9f9f9;color:#1a1a1a}
         <button class="lang-btn" id="btnEn" onclick="setLang('en')">English</button>
       </div>
     </div>
-    <p class="sub-text" id="appSub">सिलाई, बुनाई, ड्रॉइंग और ज़्यादा — कदम दर कदम</p>
+    <p class="sub-text" id="appSub">सिलाई, बुनाई, मेकअप और ज़्यादा — कदम दर कदम</p>
   </div>
   <div class="sec-title" id="catLabel">श्रेणी चुनिए</div>
   <div class="cats">
     <button class="cat-btn on" onclick="selectCat(this,'silai')"><span class="ico">🧵</span><span id="c1">सिलाई</span></button>
     <button class="cat-btn" onclick="selectCat(this,'bunai')"><span class="ico">🧶</span><span id="c2">बुनाई</span></button>
     <button class="cat-btn" onclick="selectCat(this,'drawing')"><span class="ico">✏️</span><span id="c3">ड्रॉइंग</span></button>
-    <button class="cat-btn" onclick="selectCat(this,'embroidery')"><span class="ico">🌸</span><span id="c4">कढ़ाई</span></button>
-    <button class="cat-btn" onclick="selectCat(this,'rangoli')"><span class="ico">🎨</span><span id="c5">रंगोली</span></button>
-    <button class="cat-btn" onclick="selectCat(this,'diy')"><span class="ico">✂️</span><span id="c6">DIY क्राफ्ट</span></button>
+    <button class="cat-btn" onclick="selectCat(this,'makeup')"><span class="ico">💄</span><span id="c4">मेकअप</span></button>
+    <button class="cat-btn" onclick="selectCat(this,'embroidery')"><span class="ico">🌸</span><span id="c5">कढ़ाई</span></button>
+    <button class="cat-btn" onclick="selectCat(this,'rangoli')"><span class="ico">🎨</span><span id="c6">रंगोली</span></button>
   </div>
   <div class="levels">
     <button class="lev-btn on" onclick="selectLevel(this,'beginner')" id="lev0">शुरुआती</button>
@@ -100,91 +111,269 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#f9f9f9;color:#1a1a1a}
         <div class="about-row">📱 <span>9839850627</span></div>
         <div class="about-row">✉️ <span>jamirkhan5833@gmail.com</span></div>
       </div>
-      <div class="about-desc" id="aboutDesc">नमस्ते! मैं आशिया खान हूँ — सिलाई, बुनाई, ड्रॉइंग और कढ़ाई की विशेषज्ञ प्रशिक्षक। इस ऐप के ज़रिए मैं आप सभी को कदम दर कदम कौशल सिखाना चाहती हूँ।</div>
+      <div class="about-desc" id="aboutDesc">नमस्ते! मैं आशिया खान हूँ — सिलाई, बुनाई, मेकअप और कढ़ाई की विशेषज्ञ प्रशिक्षक। इस ऐप के ज़रिए आप सभी को कदम दर कदम सिखाना चाहती हूँ।</div>
     </div>
   </div>
 </div>
 <script>
 const L={
-  hi:{sub:"सिलाई, बुनाई, ड्रॉइंग और ज़्यादा — कदम दर कदम",catLabel:"श्रेणी चुनिए",cats:["सिलाई","बुनाई","ड्रॉइंग","कढ़ाई","रंगोली","DIY क्राफ्ट"],levs:["शुरुआती","मध्यम","उन्नत"],done:"पाठ पूरे",tip:"सुझाव",markDone:"पूरा हो गया ✓",redo:"दोबारा करो ↺",badges:{easy:"आसान",medium:"थोड़ा मुश्किल",hard:"उन्नत"},aboutTitle:"हमारे बारे में",aboutRole:"कौशल प्रशिक्षक और विशेषज्ञ",aboutDesc:"नमस्ते! मैं आशिया खान हूँ — सिलाई, बुनाई, ड्रॉइंग और कढ़ाई की विशेषज्ञ प्रशिक्षक। इस ऐप के ज़रिए मैं आप सभी को कदम दर कदम कौशल सिखाना चाहती हूँ।"},
-  en:{sub:"Stitching, Knitting, Drawing & more — step by step",catLabel:"Choose category",cats:["Stitching","Knitting","Drawing","Embroidery","Rangoli","DIY Craft"],levs:["Beginner","Intermediate","Advanced"],done:"lessons done",tip:"Tip",markDone:"Mark as done ✓",redo:"Redo ↺",badges:{easy:"Easy",medium:"Medium",hard:"Advanced"},aboutTitle:"About",aboutRole:"Skills Trainer & Expert",aboutDesc:"Hello! I am Ashiya Khan — expert trainer for stitching, knitting, drawing and embroidery. Through this app I teach everyone skills step by step."}
+  hi:{sub:"सिलाई, बुनाई, मेकअप और ज़्यादा — कदम दर कदम",catLabel:"श्रेणी चुनिए",cats:["सिलाई","बुनाई","ड्रॉइंग","मेकअप","कढ़ाई","रंगोली"],levs:["शुरुआती","मध्यम","उन्नत"],done:"पाठ पूरे",tip:"सुझाव",markDone:"पूरा हो गया ✓",redo:"दोबारा करो ↺",badges:{easy:"आसान",medium:"थोड़ा मुश्किल",hard:"उन्नत"},aboutTitle:"हमारे बारे में",aboutRole:"कौशल प्रशिक्षक और विशेषज्ञ",aboutDesc:"नमस्ते! मैं आशिया खान हूँ — सिलाई, बुनाई, मेकअप और कढ़ाई की विशेषज्ञ प्रशिक्षक। इस ऐप के ज़रिए आप सभी को कदम दर कदम सिखाना चाहती हूँ।",practical:"व्यावहारिक सुझाव",steps:"कदम"},
+  en:{sub:"Stitching, Knitting, Makeup & more — step by step",catLabel:"Choose category",cats:["Stitching","Knitting","Drawing","Makeup","Embroidery","Rangoli"],levs:["Beginner","Intermediate","Advanced"],done:"lessons done",tip:"Tip",markDone:"Mark as done ✓",redo:"Redo ↺",badges:{easy:"Easy",medium:"Medium",hard:"Advanced"},aboutTitle:"About",aboutRole:"Skills Trainer & Expert",aboutDesc:"Hello! I am Ashiya Khan — expert trainer for stitching, knitting, makeup and embroidery. Through this app I teach everyone step by step.",practical:"Practical Tips",steps:"Steps"}
 };
+
 const data={
   silai:{
     beginner:{lessons:[
-      {title:"सुई में धागा डालना",badge:"easy",done:true,steps:[{t:"धागे का सिरा गीला करो"},{t:"<strong>सुई की आँख</strong> में डालो"},{t:"15cm छोड़ कर गाँठ लगाओ"},{t:"5 बार अभ्यास करो"}]},
-      {title:"सीधा टाँका",badge:"easy",done:true,steps:[{t:"दो कपड़े pin से लगाओ"},{t:"सुई नीचे से ऊपर, <strong>5mm</strong> का टाँका"},{t:"अंत में 3 बार टाँका करो"}]},
-      {title:"कपड़े की नाप",badge:"easy",steps:[{t:"<strong>नाप टेप</strong> सीधा रखो"},{t:"कमर, सीना, कंधा नापो"},{t:"कॉपी में लिखते जाओ"}]},
-      {title:"हाथ से पाउच",badge:"medium",steps:[{t:"15x20 cm का कपड़ा काटो"},{t:"बीच में मोड़ो, <strong>दो साइड सिलाई</strong>"},{t:"ऊपर का कोना पलटो"},{t:"रिबन डालो — हो गया!"}]},
-      {title:"बटन लगाना",badge:"easy",steps:[{t:"बटन की जगह chalk से mark"},{t:"Double धागा लो"},{t:"<strong>चार छेद</strong> में X सिलाई — 6 बार"},{t:"पीछे गाँठ लगाओ"}]}
-    ],tip:"शुरुआत में मोटी सुई और मोटा धागा लो।"},
+      {title:"सुई में धागा डालना",badge:"easy",done:true,
+       video:"https://www.youtube.com/embed/p2aKPAhBsGU",vtitle:"सुई में धागा डालना — Tutorial",
+       imgs:["🧵","✂️","🪡"],
+       steps:[{t:"धागे का सिरा गीला करो — इससे आसानी होगी"},{t:"<strong>सुई की आँख</strong> को रोशनी में रखो"},{t:"धागा धीरे से डालो — जल्दी नहीं"},{t:"15cm छोड़ कर गाँठ लगाओ"},{t:"रोज़ 5 बार अभ्यास करो"}],
+       tip:"मोटी सुई से शुरू करो — आँख बड़ी होती है"},
+      {title:"सीधा टाँका (Running Stitch)",badge:"easy",
+       video:"https://www.youtube.com/embed/mJRpDvGBOe8",vtitle:"Running Stitch Tutorial Hindi",
+       imgs:["🧵","📏","✂️"],
+       steps:[{t:"दो कपड़े pin से लगाओ"},{t:"सुई नीचे से ऊपर, <strong>5mm</strong> का टाँका"},{t:"सब टाँके बराबर रखो — scale से नापो"},{t:"अंत में 3 बार टाँका करो"}],
+       tip:"पहली बार chalk से line खींचो, उस पर सिलाई करो"},
+      {title:"कपड़े की नाप लेना",badge:"easy",
+       video:"https://www.youtube.com/embed/kfMDHsFmKlo",vtitle:"Body Measurement Tutorial Hindi",
+       imgs:["📏","📝","👗"],
+       steps:[{t:"<strong>नाप टेप</strong> सीधा रखो — तिरछा नहीं"},{t:"कमर: नाभि के पास"},{t:"सीना: सबसे चौड़ी जगह"},{t:"कंधा: एक कंधे से दूसरे तक"},{t:"सब माप कॉपी में लिखो"}],
+       tip:"माप लेते समय सीधे खड़े रहो"},
+      {title:"हाथ से पाउच बनाना",badge:"medium",
+       video:"https://www.youtube.com/embed/U1mZHBKFCJs",vtitle:"Hand Sewn Pouch Tutorial",
+       imgs:["👜","✂️","🧵"],
+       steps:[{t:"15x20 cm का कपड़ा काटो"},{t:"बीच में मोड़ो, <strong>दो साइड सिलाई</strong> करो"},{t:"ऊपर का कोना 1cm मोड़ो — hem करो"},{t:"रिबन डालो — हो गया!"}],
+       tip:"पहली बार plain कपड़े से बनाओ"},
+      {title:"बटन लगाना",badge:"easy",
+       video:"https://www.youtube.com/embed/QLhDc9Fq4fI",vtitle:"Button Sewing Tutorial Hindi",
+       imgs:["🔘","🧵","✂️"],
+       steps:[{t:"बटन की जगह chalk से mark करो"},{t:"Double धागा लो — मज़बूती के लिए"},{t:"<strong>चार छेद</strong> में X सिलाई — 6 बार"},{t:"पीछे tight गाँठ लगाओ"}],
+       tip:"बटन के नीचे एक छोटा कपड़ा रखो — ज़्यादा मज़बूत होगा"}
+    ],tip:"शुरुआत में मोटी सुई और मोटा धागा लो — आसान होता है।"},
     intermediate:{lessons:[
-      {title:"मशीन थ्रेडिंग",badge:"medium",steps:[{t:"Thread path follow करो"},{t:"Bobbin सीधा डालो"},{t:"Test seam चलाओ"}]},
-      {title:"Zip लगाना",badge:"medium",steps:[{t:"Zip को कपड़े से pin"},{t:"Zip foot attach करो"},{t:"दोनों तरफ समान सिलाई"}]},
-      {title:"कुर्ता कटिंग",badge:"hard",steps:[{t:"Pattern paper पे बनाओ"},{t:"Grain line सीधा रखो"},{t:"Seam allowance 1.5cm"}]}
-    ],tip:"Machine की speed धीमी रखो zip लगाते समय।"},
+      {title:"सिलाई मशीन चलाना",badge:"medium",
+       video:"https://www.youtube.com/embed/L5CmCFvlixo",vtitle:"Sewing Machine Tutorial Hindi",
+       imgs:["🪡","⚙️","👗"],
+       steps:[{t:"Thread path manual में देखो"},{t:"Bobbin सीधा डालो"},{t:"Speed धीमी रखो शुरुआत में"},{t:"Test seam पहले चलाओ"}],
+       tip:"Machine की speed धीमी रखो — control अच्छा रहेगा"},
+      {title:"Zip लगाना",badge:"medium",
+       video:"https://www.youtube.com/embed/pzKJzBGjzqw",vtitle:"How to Sew a Zipper Hindi",
+       imgs:["🤐","✂️","🧵"],
+       steps:[{t:"Zip को कपड़े से pin लगाओ"},{t:"Zip foot machine में लगाओ"},{t:"दोनों तरफ समान सिलाई करो"},{t:"Zip खोल-बंद करके test करो"}],
+       tip:"Zip foot ज़रूर use करो — नहीं तो टेढ़ी सिलाई होगी"},
+      {title:"कुर्ता कटिंग",badge:"hard",
+       video:"https://www.youtube.com/embed/mVxgEXMaFpI",vtitle:"Kurti Cutting Tutorial Hindi",
+       imgs:["👘","📏","✂️"],
+       steps:[{t:"माप लो — कंधा, लंबाई, सीना"},{t:"Pattern paper पे बनाओ पहले"},{t:"Grain line सीधा रखो"},{t:"Seam allowance 1.5cm छोड़ो"},{t:"कपड़ा fold करके काटो"}],
+       tip:"पहली बार सस्ते कपड़े से practice करो"}
+    ],tip:"Machine की speed दीमी रखो — गलती कम होगी।"},
     advanced:{lessons:[
-      {title:"अनारकली Pattern",badge:"hard",steps:[{t:"Bodice और flare अलग काटो"},{t:"Gathers calculate करो"},{t:"Lining attach करो"}]},
-      {title:"Embellishment Work",badge:"hard",steps:[{t:"Design chalk से mark"},{t:"Sequence लगाओ"},{t:"Press करके finish"}]}
-    ],tip:"Advanced काम में समय लो।"}
+      {title:"अनारकली बनाना",badge:"hard",
+       video:"https://www.youtube.com/embed/wXKIsJMkiLU",vtitle:"Anarkali Cutting Stitching Tutorial",
+       imgs:["👗","✂️","🪡"],
+       steps:[{t:"Bodice और flare का pattern बनाओ"},{t:"Gathers calculate करो"},{t:"Bodice पहले सिलो"},{t:"Flare attach करो"},{t:"Lining लगाओ"}],
+       tip:"Anarkali में lining ज़रूर लगाओ — shape अच्छी रहती है"}
+    ],tip:"Advanced काम में जल्दी मत करो।"}
   },
   bunai:{
     beginner:{lessons:[
-      {title:"ऊन और सुइयाँ",badge:"easy",done:true,steps:[{t:"<strong>मोटी ऊन</strong> लो — 6-8mm सुइयाँ"},{t:"ऊन की ball bowl में रखो"},{t:"हाथ धोकर सुइयाँ पकड़ो"}]},
-      {title:"Slip knot और Cast on",badge:"easy",steps:[{t:"ऊन का loop बनाओ"},{t:"सुई में डालो"},{t:"20 stitches cast on करो"}]},
-      {title:"Knit stitch",badge:"easy",steps:[{t:"सुई बाएँ हाथ में"},{t:"<strong>Right सुई</strong> loop में"},{t:"Yarn wrap करो, pull out"}]},
-      {title:"Purl stitch",badge:"medium",steps:[{t:"Yarn आगे रखो"},{t:"सुई सामने से डालो"},{t:"Wrap करो, pull करो"}]}
-    ],tip:"पहले 10 stitches उलटे होते हैं — normal है!"},
+      {title:"ऊन और सुइयाँ चुनना",badge:"easy",done:true,
+       video:"https://www.youtube.com/embed/nCDHBpFOLyg",vtitle:"Knitting for Beginners Hindi",
+       imgs:["🧶","🪡","✨"],
+       steps:[{t:"<strong>मोटी ऊन</strong> लो पहली बार — 6-8mm सुइयाँ"},{t:"ऊन की ball को bowl में रखो"},{t:"हाथ धोकर सुइयाँ पकड़ो — grip अच्छी होगी"}],
+       tip:"पहली बार light color की ऊन लो — टाँके साफ दिखेंगे"},
+      {title:"Slip Knot और Cast On",badge:"easy",
+       video:"https://www.youtube.com/embed/AmAoJRkqFxI",vtitle:"Cast On Knitting Hindi Tutorial",
+       imgs:["🧶","🪡","👐"],
+       steps:[{t:"ऊन का loop बनाओ — ऊपर से अंदर डालो"},{t:"सुई में डालो — <strong>पहली stitch</strong> तैयार"},{t:"20 stitches cast on करो practice के लिए"}],
+       tip:"Loop बहुत tight मत बनाओ — सुई आसानी से जानी चाहिए"},
+      {title:"Knit Stitch",badge:"easy",
+       video:"https://www.youtube.com/embed/LLCc22Ev-bQ",vtitle:"Knit Stitch Tutorial Hindi",
+       imgs:["🧶","🪡","🌟"],
+       steps:[{t:"सुई बाएँ हाथ में, yarn दाएँ से पकड़ो"},{t:"<strong>Right सुई</strong> left वाले loop में डालो"},{t:"Yarn के साथ wrap करो"},{t:"Pull out करो — एक stitch बनी"}],
+       tip:"हाथ ढीला रखो — tension सही रहेगा"},
+      {title:"Purl Stitch",badge:"medium",
+       video:"https://www.youtube.com/embed/FaOjPfDdMSE",vtitle:"Purl Stitch Hindi Tutorial",
+       imgs:["🧶","🪡","💫"],
+       steps:[{t:"Yarn आगे रखो — knit की तरह पीछे नहीं"},{t:"सुई loop में सामने से डालो"},{t:"Wrap करो और pull करो"},{t:"Practice करते रहो"}],
+       tip:"Purl और Knit मिलाकर beautiful pattern बनता है"}
+    ],tip:"पहले 10 stitches उलटे होते हैं — बिलकुल normal है!"},
     intermediate:{lessons:[
-      {title:"Ribbing Pattern",badge:"medium",steps:[{t:"Knit 1, purl 1 alternately"},{t:"दोनों rows same pattern"},{t:"Stretchy border बनता है"}]},
-      {title:"Color Change",badge:"medium",steps:[{t:"Row end पे yarn बदलो"},{t:"दोनों yarns 6 inch छोड़ो"},{t:"Loose ends बाद में छुपाओ"}]}
+      {title:"Ribbing Pattern",badge:"medium",
+       video:"https://www.youtube.com/embed/kgk-mXt0vl8",vtitle:"Ribbing Knitting Pattern Hindi",
+       imgs:["🧶","🌊","✨"],
+       steps:[{t:"Knit 1, purl 1 alternately करो"},{t:"दोनों rows same pattern"},{t:"Stretchy border बनता है"}],
+       tip:"Ribbing sweater के borders के लिए best है"}
     ],tip:"Color का yarn mid-row मत बदलो।"},
-    advanced:{lessons:[{title:"Sweater Knitting",badge:"hard",steps:[{t:"Gauge swatch पहले बनाओ"},{t:"Back, front, sleeves अलग"},{t:"Seam करके जोड़ो"}]}],tip:"Gauge swatch ज़रूर बनाओ।"}
+    advanced:{lessons:[
+      {title:"Sweater Knitting",badge:"hard",
+       video:"https://www.youtube.com/embed/tMVCJqMHEJo",vtitle:"Sweater Knitting Complete Tutorial",
+       imgs:["🧥","🧶","📏"],
+       steps:[{t:"Gauge swatch पहले बनाओ"},{t:"Back, front, sleeves अलग बनाओ"},{t:"Seam करके जोड़ो"},{t:"Neckline finish करो"}],
+       tip:"Gauge swatch ज़रूर बनाओ — size perfect रहेगा"}
+    ],tip:"Sweater के लिए gauge swatch ज़रूर बनाओ।"}
   },
   drawing:{
     beginner:{lessons:[
-      {title:"Lines और Shapes",badge:"easy",done:true,steps:[{t:"Pencil ढील पकड़ो"},{t:"<strong>Straight lines</strong> कंधे से"},{t:"Circle एक stroke में"},{t:"10 minute रोज़ अभ्यास"}]},
-      {title:"आँखें बनाना",badge:"easy",steps:[{t:"Almond shape बनाओ"},{t:"<strong>Iris</strong>: बड़े circle में छोटा"},{t:"Eyelashes बाहर से अंदर"},{t:"Highlight छोड़ो"}]},
-      {title:"फूल खींचना",badge:"easy",steps:[{t:"Center में circle"},{t:"5-6 petals around it"},{t:"Stem और पत्ते"},{t:"<strong>Shading</strong>: हल्की line"}]},
-      {title:"Face Proportions",badge:"medium",steps:[{t:"Oval बनाओ"},{t:"बीच में line — आँखें"},{t:"नाक बीच में"},{t:"मुँह: नाक और ठुड्डी के बीच"}]},
-      {title:"Shading Basics",badge:"medium",steps:[{t:"<strong>Light source</strong> decide करो"},{t:"Hatching: parallel lines"},{t:"Cross-hatching: X बनाओ"},{t:"Blending: finger से"}]}
-    ],tip:"गलती से मत डरो — rubber artist का best friend है!"},
+      {title:"Lines और Shapes",badge:"easy",done:true,
+       video:"https://www.youtube.com/embed/evdFGFMBHX0",vtitle:"Drawing for Beginners Hindi",
+       imgs:["✏️","📐","🎨"],
+       steps:[{t:"Pencil ढील पकड़ो — कंधा relax करो"},{t:"<strong>Straight lines</strong> — wrist से नहीं, कंधे से"},{t:"Circle एक stroke में बनाओ"},{t:"10 minute रोज़ अभ्यास करो"}],
+       tip:"गलती से मत डरो — rubber artist का best friend है!"},
+      {title:"आँखें बनाना",badge:"easy",
+       video:"https://www.youtube.com/embed/vlSqJf4fSJs",vtitle:"How to Draw Eyes Hindi Tutorial",
+       imgs:["👁️","✏️","🎨"],
+       steps:[{t:"Almond shape बनाओ"},{t:"<strong>Iris</strong>: बड़े circle में छोटा circle"},{t:"Eyelashes: बाहर से अंदर — thin to thick"},{t:"Highlight के लिए थोड़ी जगह छोड़ो"}],
+       tip:"Reference photo से देखकर बनाओ"},
+      {title:"फूल खींचना",badge:"easy",
+       video:"https://www.youtube.com/embed/zCi1LkWlEPQ",vtitle:"How to Draw Flowers Hindi",
+       imgs:["🌸","✏️","🎨"],
+       steps:[{t:"Center में circle बनाओ"},{t:"5-6 petals around it — kidney shape"},{t:"Stem और 2-3 पत्ते"},{t:"<strong>Shading</strong>: petals के नीचे हल्की line"}],
+       tip:"एक ही फूल को 10 बार बनाओ — perfect हो जाएगा"},
+      {title:"Face Proportions",badge:"medium",
+       video:"https://www.youtube.com/embed/YXlMTcMB5Sc",vtitle:"Face Drawing Proportions Hindi",
+       imgs:["😊","✏️","📐"],
+       steps:[{t:"Oval बनाओ — यही face है"},{t:"बीच में horizontal line — आँखें यहाँ"},{t:"नाक: बीच में, कान के level पे"},{t:"मुँह: नाक और ठुड्डी के बीच"}],
+       tip:"पहले हल्का sketch करो, बाद में dark करो"},
+      {title:"Shading Basics",badge:"medium",
+       video:"https://www.youtube.com/embed/4u3ajJhOYqY",vtitle:"Shading Tutorial for Beginners Hindi",
+       imgs:["🖤","✏️","🌗"],
+       steps:[{t:"<strong>Light source</strong> decide करो पहले"},{t:"Hatching: parallel lines से shade करो"},{t:"Cross-hatching: X बनाओ darker areas के लिए"},{t:"Blending: finger से smoothly rub करो"}],
+       tip:"Light source एक ही जगह से आना चाहिए"}
+    ],tip:"रोज़ 15 minute drawing practice करो — जल्दी improve होगा।"},
     intermediate:{lessons:[
-      {title:"Portrait Sketching",badge:"medium",steps:[{t:"Lightly grid बनाओ"},{t:"एक feature एक वक़्त"},{t:"बाद में grid हटाओ"}]},
-      {title:"Still Life",badge:"medium",steps:[{t:"3 चीज़ें arrange करो"},{t:"Negative space drawing"},{t:"Value contrast डालो"}]}
-    ],tip:"Reference photo से सीखो पहले।"},
-    advanced:{lessons:[{title:"Color Theory",badge:"hard",steps:[{t:"Primary, secondary, tertiary"},{t:"Complementary colors"},{t:"Warm/cool balance"}]}],tip:"Colors mix करते समय notes लो।"}
+      {title:"Portrait Sketching",badge:"medium",
+       video:"https://www.youtube.com/embed/pLxCnrPzjpQ",vtitle:"Portrait Drawing Tutorial Hindi",
+       imgs:["🖼️","✏️","👤"],
+       steps:[{t:"Lightly grid बनाओ face पे"},{t:"एक feature एक वक़्त बनाओ"},{t:"बाद में grid हटाओ"},{t:"Details add करो"}],
+       tip:"Reference photo से सीखो पहले"}
+    ],tip:"Reference photo से सीखो पहले — imagination बाद में आता है।"},
+    advanced:{lessons:[
+      {title:"Color Theory",badge:"hard",
+       video:"https://www.youtube.com/embed/YeI6Wqn4I78",vtitle:"Color Theory Art Hindi",
+       imgs:["🎨","🌈","✨"],
+       steps:[{t:"Primary, secondary, tertiary जानो"},{t:"Complementary colors use करो"},{t:"Mood के लिए warm/cool balance करो"}],
+       tip:"Colors mix करते समय notes लो — repeat कर पाओगी"}
+    ],tip:"Colors mix करते समय notes लो।"}
+  },
+  makeup:{
+    beginner:{lessons:[
+      {title:"Skin Prep और Moisturizer",badge:"easy",done:true,
+       video:"https://www.youtube.com/embed/YzfXUBfRagA",vtitle:"Basic Skin Prep Makeup Hindi",
+       imgs:["🧴","💧","✨"],
+       steps:[{t:"Face अच्छे से धोओ — clean skin ज़रूरी"},{t:"<strong>Moisturizer</strong> लगाओ — 2 minute बाद makeup"},{t:"SPF sunscreen ज़रूर लगाओ दिन में"},{t:"Primer लगाओ — makeup ज़्यादा देर टिकेगा"}],
+       tip:"Skin care के बिना makeup अच्छा नहीं लगता"},
+      {title:"Foundation और BB Cream",badge:"easy",
+       video:"https://www.youtube.com/embed/pDVmjMGp0k4",vtitle:"Foundation Tutorial for Beginners Hindi",
+       imgs:["💄","🖌️","✨"],
+       steps:[{t:"अपने skin tone से match करो"},{t:"<strong>Beauty blender</strong> को पहले गीला करो"},{t:"Jawline, forehead, nose पे लगाओ"},{t:"Blend करो — कोई line नहीं दिखनी चाहिए"},{t:"Neck पे भी थोड़ा लगाओ"}],
+       tip:"Natural light में check करो — indoor light से shade गलत लग सकती है"},
+      {title:"Kajal और Eyeliner",badge:"easy",
+       video:"https://www.youtube.com/embed/7Ap5j8XKWFU",vtitle:"Kajal Eyeliner Tutorial Hindi",
+       imgs:["👁️","💄","✨"],
+       steps:[{t:"Lower waterline पे kajal लगाओ पहले"},{t:"<strong>Upper lash line</strong> पे thin line"},{t:"Wing के लिए — पहले dot लगाओ, फिर line"},{t:"Smudge को Q-tip से clean करो"}],
+       tip:"Kajal लगाने से पहले आँख को ठीक से खोलो"},
+      {title:"Lipstick लगाना",badge:"easy",
+       video:"https://www.youtube.com/embed/KJXiJkFSBow",vtitle:"Perfect Lipstick Application Hindi",
+       imgs:["💋","💄","✨"],
+       steps:[{t:"Lip liner से पहले outline करो"},{t:"बीच से शुरू करो — center पहले"},{t:"<strong>Blot</strong> करो tissue से — ज़्यादा देर टिकेगा"},{t:"Gloss ऊपर से लगा सकते हो"}],
+       tip:"Lip liner से lipstick ज़्यादा देर टिकती है"},
+      {title:"Simple Day Makeup",badge:"medium",
+       video:"https://www.youtube.com/embed/uOIVN97q3lY",vtitle:"Simple Day Makeup Tutorial Hindi",
+       imgs:["💄","✨","🌸"],
+       steps:[{t:"Moisturizer → Sunscreen → Primer"},{t:"BB cream या light foundation"},{t:"Concealer under eyes"},{t:"Brown eyeshadow — natural look"},{t:"Kajal → Mascara → Blush → Lipstick"}],
+       tip:"Day makeup में कम products use करो — natural दिखो"}
+    ],tip:"Makeup remove करना उतना ही ज़रूरी है जितना लगाना।"},
+    intermediate:{lessons:[
+      {title:"Smoky Eye Makeup",badge:"medium",
+       video:"https://www.youtube.com/embed/jj3sUN_eKKs",vtitle:"Smoky Eye Tutorial Hindi",
+       imgs:["👁️","🖤","✨"],
+       steps:[{t:"Eye primer लगाओ पहले"},{t:"Dark shadow lid पे"},{t:"<strong>Blend</strong> करो — कोई harsh line नहीं"},{t:"Highlight inner corner पे"},{t:"Black liner और mascara"}],
+       tip:"Blend करना ही smoky eye का secret है"},
+      {title:"Contouring और Highlighting",badge:"medium",
+       video:"https://www.youtube.com/embed/0S3GQRxI95Y",vtitle:"Contouring Tutorial Hindi",
+       imgs:["🖌️","✨","💫"],
+       steps:[{t:"Contour: nose sides, cheekbones नीचे"},{t:"Highlight: nose tip, cheekbones ऊपर"},{t:"<strong>Blend अच्छे से</strong> करो"},{t:"Setting powder से set करो"}],
+       tip:"शुरुआत में हल्का contour करो — heavy नहीं"}
+    ],tip:"Makeup में blending सबसे ज़रूरी है।"},
+    advanced:{lessons:[
+      {title:"Party/Bridal Makeup",badge:"hard",
+       video:"https://www.youtube.com/embed/6EKkbcUbE_Y",vtitle:"Party Makeup Tutorial Hindi",
+       imgs:["👰","💄","✨"],
+       steps:[{t:"Heavy base — full coverage foundation"},{t:"Cut crease eyeshadow"},{t:"Dramatic lashes"},{t:"Bold lip या nude with drama eyes"},{t:"Setting spray से set करो"}],
+       tip:"Party makeup रात को करो — photos में अच्छा आता है"}
+    ],tip:"Heavy makeup में setting spray ज़रूर use करो।"}
   },
   embroidery:{
     beginner:{lessons:[
-      {title:"Hoop में कपड़ा",badge:"easy",done:true,steps:[{t:"Inner hoop नीचे"},{t:"Outer hoop ऊपर से"},{t:"<strong>Screw tight</strong> करो"}]},
-      {title:"Running Stitch",badge:"easy",steps:[{t:"Design trace करो"},{t:"Up-down equal stitches"},{t:"6 strand में से 2 लो"}]},
-      {title:"Satin Stitch",badge:"medium",steps:[{t:"Outline पहले करो"},{t:"Parallel stitches से fill"},{t:"<strong>दोनों edge</strong> सीधे रखो"}]}
-    ],tip:"Embroidery में जल्दी मत करो।"},
-    intermediate:{lessons:[{title:"French Knots",badge:"medium",steps:[{t:"Needle के पास 2 बार wrap"},{t:"वही जगह नीचे डालो"},{t:"Slow pull करो"}]}],tip:"French knots में वक़्त लगता है।"},
-    advanced:{lessons:[{title:"3D Floral Embroidery",badge:"hard",steps:[{t:"Petals अलग बनाओ"},{t:"Wire से support"},{t:"Base पे attach"}]}],tip:"Wire gauge सही चुनो।"}
+      {title:"Hoop में कपड़ा लगाना",badge:"easy",done:true,
+       video:"https://www.youtube.com/embed/J3U2ICBZ_yI",vtitle:"Embroidery Hoop Setup Hindi",
+       imgs:["🌸","🪡","✨"],
+       steps:[{t:"Inner hoop कपड़े के नीचे रखो"},{t:"Outer hoop ऊपर से डालो"},{t:"<strong>Screw tight</strong> करो — कपड़ा खिंचे"}],
+       tip:"कपड़ा drum की तरह tight होना चाहिए"},
+      {title:"Running Stitch Embroidery",badge:"easy",
+       video:"https://www.youtube.com/embed/D0WbfCxFAKk",vtitle:"Running Stitch Embroidery Hindi",
+       imgs:["🌸","🪡","🎨"],
+       steps:[{t:"Design pencil से trace करो पहले"},{t:"Up-down equally sized stitches"},{t:"6 strand floss में से 2 लो"}],
+       tip:"Even stitches के लिए practice ज़रूरी है"},
+      {title:"Satin Stitch",badge:"medium",
+       video:"https://www.youtube.com/embed/rDCOSiTmLf8",vtitle:"Satin Stitch Tutorial Hindi",
+       imgs:["🌸","✨","🪡"],
+       steps:[{t:"Outline पहले running stitch से करो"},{t:"Parallel stitches से andar fill करो"},{t:"<strong>दोनों edge</strong> पे सीधा रखना ज़रूरी"}],
+       tip:"Satin stitch में thread tension equal रखो"}
+    ],tip:"Embroidery में जल्दी मत करो — एक stitch गलत हुई तो निकालो।"},
+    intermediate:{lessons:[
+      {title:"French Knots",badge:"medium",
+       video:"https://www.youtube.com/embed/oHRdx5JZrTQ",vtitle:"French Knots Tutorial Hindi",
+       imgs:["🌸","🔮","✨"],
+       steps:[{t:"Needle के पास yarn 2 बार wrap करो"},{t:"वही जगह नीचे डालो"},{t:"Slow pull करो — knot बनी"}],
+       tip:"French knots consistent होने में वक़्त लगता है"}
+    ],tip:"French knots consistent होने में वक़्त लगता है।"},
+    advanced:{lessons:[
+      {title:"3D Floral Embroidery",badge:"hard",
+       video:"https://www.youtube.com/embed/qGaihFkTlEo",vtitle:"3D Flower Embroidery Tutorial",
+       imgs:["🌺","🌸","✨"],
+       steps:[{t:"Petals अलग बनाओ"},{t:"Wire से support दो"},{t:"Base पे attach करो"}],
+       tip:"3D embroidery के लिए wire gauge सही चुनो"}
+    ],tip:"3D embroidery के लिए wire gauge सही चुनो।"}
   },
   rangoli:{
     beginner:{lessons:[
-      {title:"Dots और Grid",badge:"easy",done:true,steps:[{t:"Chalk से <strong>5x5 grid</strong>"},{t:"Dots connect करो"},{t:"Colors plan करो"}]},
-      {title:"फूलों वाली Rangoli",badge:"easy",steps:[{t:"Center dot से शुरू"},{t:"8 petals बराबर"},{t:"<strong>Layer by layer</strong> बाहर"}]},
-      {title:"दीया Design",badge:"medium",steps:[{t:"दीया की outline बनाओ"},{t:"Warm colors पहले"},{t:"Contrasting outline"}]}
-    ],tip:"Rangoli center से शुरू करो।"},
-    intermediate:{lessons:[{title:"Kolam Pattern",badge:"medium",steps:[{t:"Pulli grid dots"},{t:"Dots के around loop"},{t:"Overlap पे color बदलो"}]}],tip:"Pencil से पहले अभ्यास।"},
-    advanced:{lessons:[{title:"3D Rangoli",badge:"hard",steps:[{t:"Flour/sand layer में"},{t:"Height center में"},{t:"Petals थोड़े उठाओ"}]}],tip:"Moist sand use करो।"}
-  },
-  diy:{
-    beginner:{lessons:[
-      {title:"Paper Flower",badge:"easy",done:true,steps:[{t:"Crepe paper 5 pieces"},{t:"हल्का <strong>crumple</strong> करो"},{t:"Wire पे tape करो"},{t:"Petals बाहर bend करो"}]},
-      {title:"Card Making",badge:"easy",steps:[{t:"Cardstock fold करो"},{t:"Inside message लिखो"},{t:"<strong>Front decoration</strong>"}]},
-      {title:"Fabric Bookmark",badge:"easy",steps:[{t:"5x20 cm कपड़ा काटो"},{t:"Edges fold करो, iron"},{t:"Sides सिलाई — done!"}]}
-    ],tip:"जितना experiment करोगी, उतना interesting!"},
-    intermediate:{lessons:[{title:"Macrame Keychain",badge:"medium",steps:[{t:"4 cords double — 8 working"},{t:"Square knot alternating"},{t:"Fringe cut करो"}]}],tip:"Cords same length की रखो।"},
-    advanced:{lessons:[{title:"Tote Bag",badge:"hard",steps:[{t:"Fabric cut — body + handles"},{t:"Interfacing लगाओ"},{t:"Assemble step by step"}]}],tip:"Medium weight canvas best है।"}
+      {title:"Dots और Grid",badge:"easy",done:true,
+       video:"https://www.youtube.com/embed/lw2RB6T8ZJ0",vtitle:"Rangoli for Beginners Hindi",
+       imgs:["🎨","⭕","✨"],
+       steps:[{t:"Chalk से <strong>5x5 grid</strong> बनाओ"},{t:"Dots को connect करो — geometric"},{t:"Colors पहले plan करो"}],
+       tip:"Rangoli center से शुरू करो — बाहर की तरफ जाओ"},
+      {title:"फूलों वाली Rangoli",badge:"easy",
+       video:"https://www.youtube.com/embed/sCBc1C2LoVs",vtitle:"Flower Rangoli Tutorial Hindi",
+       imgs:["🌸","🎨","✨"],
+       steps:[{t:"Center dot से शुरू करो"},{t:"8 petals circle में बराबर"},{t:"<strong>Layer by layer</strong> बाहर की तरफ"},{t:"Colors fill करो"}],
+       tip:"एक color एक बार में भरो — mix मत होने दो"},
+      {title:"दीया Design",badge:"medium",
+       video:"https://www.youtube.com/embed/dYhPYJaqkBQ",vtitle:"Diya Rangoli Design Hindi",
+       imgs:["🪔","🎨","✨"],
+       steps:[{t:"दीया की outline chalk से बनाओ"},{t:"Fill करो — warm colors पहले"},{t:"Outline के साथ contrasting color"}],
+       tip:"दीया rangoli Diwali में बहुत सुंदर लगती है"}
+    ],tip:"Rangoli बाहर से अंदर मत भरो — center से शुरू करो।"},
+    intermediate:{lessons:[
+      {title:"Kolam Pattern",badge:"medium",
+       video:"https://www.youtube.com/embed/vL4_rNHCYEk",vtitle:"Kolam Rangoli Tutorial Hindi",
+       imgs:["🎨","🔮","✨"],
+       steps:[{t:"Pulli grid dots लगाओ"},{t:"Dots के around loop करके lines चलाओ"},{t:"Overlap points पे color बदलो"}],
+       tip:"Kolam में pencil से पहले practice करो"}
+    ],tip:"Kolam में pencil से पहले practice करो।"},
+    advanced:{lessons:[
+      {title:"3D Rangoli",badge:"hard",
+       video:"https://www.youtube.com/embed/nv3jxn2vl8I",vtitle:"3D Rangoli Tutorial Hindi",
+       imgs:["🎨","⭐","✨"],
+       steps:[{t:"Flour/sand को layer में डालो"},{t:"Height create करो center में"},{t:"Petals को slightly उठाकर रखो"}],
+       tip:"3D rangoli के लिए slightly moist sand use करो"}
+    ],tip:"3D rangoli के लिए slightly moist sand use करो।"}
   }
 };
 
 let curCat="silai",curLevel="beginner",openLesson=-1,curLang="hi";
+let loadedVideos={};
 
 function setLang(lang){
   curLang=lang;
@@ -202,13 +391,17 @@ function setLang(lang){
 }
 function selectCat(el,cat){
   document.querySelectorAll(".cat-btn").forEach(b=>b.classList.remove("on"));
-  el.classList.add("on");curCat=cat;openLesson=-1;render();
+  el.classList.add("on");curCat=cat;openLesson=-1;loadedVideos={};render();
 }
 function selectLevel(el,level){
   document.querySelectorAll(".lev-btn").forEach(b=>b.classList.remove("on"));
-  el.classList.add("on");curLevel=level;openLesson=-1;render();
+  el.classList.add("on");curLevel=level;openLesson=-1;loadedVideos={};render();
 }
 function toggleLesson(i){openLesson=openLesson===i?-1:i;render();}
+function loadVideo(i,url){
+  loadedVideos[i]=true;
+  document.getElementById("vwrap"+i).innerHTML='<iframe src="'+url+'?autoplay=1&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+}
 function markDone(e,i){
   e.stopPropagation();
   data[curCat][curLevel].lessons[i].done=!data[curCat][curLevel].lessons[i].done;
@@ -229,9 +422,20 @@ function render(){
         <div class="lesson-title">${l.title}</div>
         <span class="badge ${getBadgeClass(l.badge)}">${t.badges[l.badge]}</span>
       </div>
-      <div class="lesson-steps">
-        ${l.steps.map((s,si)=>`<div class="step"><div class="step-num">${si+1}</div><div class="step-text">${s.t}</div></div>`).join("")}
-        <button class="done-btn" onclick="markDone(event,${i})">${l.done?t.redo:t.markDone}</button>
+      <div class="lesson-body">
+        <div class="video-wrap" id="vwrap${i}">
+          <div class="video-placeholder" onclick="loadVideo(${i},'${l.video}')">
+            <div class="play-btn"></div>
+            <div class="video-title">${l.vtitle}</div>
+          </div>
+        </div>
+        <div class="lesson-content">
+          <div class="img-row">${l.imgs.map(img=>`<div class="img-thumb">${img}</div>`).join("")}</div>
+          <div class="steps-title">📋 ${t.steps||"Steps"}</div>
+          ${l.steps.map((s,si)=>`<div class="step"><div class="step-num">${si+1}</div><div class="step-text">${s.t}</div></div>`).join("")}
+          <div class="tip-card">💡 <strong>${t.tip}:</strong> ${l.tip}</div>
+          <button class="done-btn" onclick="markDone(event,${i})">${l.done?t.redo:t.markDone}</button>
+        </div>
       </div>
     </div>`).join("");
 }
